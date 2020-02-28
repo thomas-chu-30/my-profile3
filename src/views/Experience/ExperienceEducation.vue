@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Timeline
+      id="time-line"
       class="time-line"
       :timeline-items="dataTimeline"
       :colorDots="'#ccc'"
@@ -9,8 +10,8 @@
       order="desc"
     />
     <div class="des">
-      <img />
-      <p>tyujm</p>
+      <img height="100%" width="100%" :src="imgs[changeImg]" />
+      <!-- <p>tyujm</p> -->
     </div>
   </div>
 </template>
@@ -23,10 +24,19 @@ export default {
   components: {
     Timeline
   },
-  data: () => ({
-    messageWhenNoItems: "There arent items",
-    dataTimeline: timeList
-  }),
+  data() {
+    return {
+      //timeline-components
+      messageWhenNoItems: "There arent items",
+      dataTimeline: timeList,
+      //imgs
+      changeImg: 0,
+      imgs: [
+        require("@/assets/images/Experience/Edu/1.jpg"),
+        require("@/assets/images/Experience/Edu/2.jpg")
+      ]
+    };
+  },
   created() {
     window.addEventListener("scroll", this.scrollMove);
     window.addEventListener("touchmove", this.scrollMove);
@@ -39,7 +49,14 @@ export default {
         document.body.scrollTop +
           ((document.documentElement && document.documentElement.scrollTop) ||
             0);
+      const timelineoffset = document.getElementById("time-line").offsetTop;
+      console.log(timelineoffset);
       console.log(top);
+      if (top < 134) {
+        this.changeImg = 0;
+      } else if (top > 134) {
+        this.changeImg = 1;
+      }
     }
   }
 };
@@ -70,6 +87,9 @@ export default {
     height: 60vh;
   }
 }
+.timeline-item {
+  height: 200px;
+}
 .dot {
   /* background-color: red; */
 }
@@ -82,12 +102,17 @@ export default {
     padding: 0px;
     .time-line {
       position: absolute;
-      top: 400px;
+      top: 450px;
     }
     .des {
+      // position: sticky;
+      // top: 0px;
       min-width: 100vw;
       left: 0px;
     }
+  }
+  .timeline-item {
+    height: 290px;
   }
 }
 </style>
