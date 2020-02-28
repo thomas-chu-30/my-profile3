@@ -1,6 +1,13 @@
 <template>
   <div id="app">
-    <Timeline class="time-line" :timeline-items="dataTimeline" :colorDots="'#ccc'" :message-when-no-items="messageWhenNoItems" :unique-year="true" order="desc" />
+    <Timeline
+      class="time-line"
+      :timeline-items="dataTimeline"
+      :colorDots="'#ccc'"
+      :message-when-no-items="messageWhenNoItems"
+      :unique-year="true"
+      order="desc"
+    />
     <div class="des">
       <img />
       <p>tyujm</p>
@@ -26,8 +33,13 @@ export default {
   },
   methods: {
     scrollMove() {
-      // const top = window.scrollY || window.pageYOffset || document.body.scrollTop + ((document.documentElement && document.documentElement.scrollTop) || 0);
-      // window.console.log(top);
+      const top =
+        window.scrollY ||
+        window.pageYOffset ||
+        document.body.scrollTop +
+          ((document.documentElement && document.documentElement.scrollTop) ||
+            0);
+      console.log(top);
     }
   }
 };

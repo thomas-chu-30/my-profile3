@@ -1,7 +1,7 @@
 <template>
   <div class="menu">
     <b-navbar toggleable="lg" type="dark" variant="info">
-      <b-navbar-brand href="#">HOME</b-navbar-brand>
+      <b-navbar-brand to="/">HOME</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
