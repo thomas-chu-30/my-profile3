@@ -1,28 +1,42 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <Menu id="menu"></Menu>
+    <router-view />
   </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Menu from "@/components/Menu";
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  components: { Menu }
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scope>
+* {
+  /* border: 1px solid; */
+}
+html,
+body {
+  /* width: 100%;
+  height: 100%; */
+  padding: 0px;
+  margin: 0px;
+}
+.menu {
+  text-align: right;
+  position: sticky;
+  top: 0px;
+  z-index: 999;
+}
+a {
+  display: inline-block;
+  font-size: 16px;
+  padding: 5px;
+  color: #42b983;
+  text-decoration: none;
+  margin: 5px;
+}
+a:hover {
+  background-color: #42b983;
+  color: white;
 }
 </style>

@@ -1,4 +1,4 @@
-# my-profile3
+# profile
 
 ## Project setup
 ```
