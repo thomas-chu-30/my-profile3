@@ -1,31 +1,41 @@
 <template>
   <div id="app">
-    <Timeline
-      id="time-line"
-      class="time-line"
-      :timeline-items="dataTimeline"
-      :colorDots="'#ccc'"
-      :message-when-no-items="messageWhenNoItems"
-      :unique-year="true"
-      order="desc"
-    />
-    <div class="des">
-      <img height="100%" width="100%" :src="imgs[changeImg]" />
-      <!-- <p>tyujm</p> -->
+    <div>
+      <Timeline
+        id="time-line"
+        class="time-line"
+        :timeline-items="dataTimeline"
+        :colorDots="'#ccc'"
+        :message-when-no-items="messageWhenNoItems"
+        :unique-year="true"
+        order="desc"
+      />
     </div>
+    <transition name="fade">
+      <component style="position: fixed" :is="Event"></component>
+    </transition>
+    <!-- <div class="des">
+      <img v-for="(img,idx) in imgs" :key="idx" width="100%" :src="imgs[idx]" />
+    </div>-->
   </div>
 </template>
 
 <script>
+import EventOne from "@/views/Experience/EduComps/EventOne.vue";
+import EventTwo from "@/views/Experience/EduComps/EventTwo.vue";
 import Timeline from "timeline-vuejs";
 import { timeList } from "@/assets/DataSource/EducationEx.js";
 export default {
   name: "App",
   components: {
-    Timeline
+    Timeline,
+    EventOne,
+    EventTwo
   },
   data() {
     return {
+      //components
+      Event: "EventTwo",
       //timeline-components
       messageWhenNoItems: "There arent items",
       dataTimeline: timeList,
@@ -50,12 +60,12 @@ export default {
           ((document.documentElement && document.documentElement.scrollTop) ||
             0);
       const timelineoffset = document.getElementById("time-line").offsetTop;
-      console.log(timelineoffset);
       console.log(top);
+      console.log(timelineoffset);
       if (top < 134) {
-        this.changeImg = 0;
+        this.Event = "EventOne";
       } else if (top > 134) {
-        this.changeImg = 1;
+        this.Event = "EventTwo";
       }
     }
   }
@@ -78,20 +88,33 @@ export default {
   .time-line {
   }
   .des {
-    position: fixed;
+    position: sticky;
     left: 45vw;
     // transition: 2s;
+    // display: flex;
+    // flex-wrap: wrap;
     border: 1px solid #cccccc;
     border-radius: 5px;
     width: 50vw;
-    height: 60vh;
+    // height: 60vh;
+    img {
+      // width: 100%;
+      // position: relative;
+    }
   }
 }
 .timeline-item {
-  height: 200px;
+  // height: 200px;
 }
 .dot {
   /* background-color: red; */
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 * {
   // border: 1px solid;

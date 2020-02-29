@@ -11,26 +11,20 @@ const timeList = [
   },
   {
     from: new Date(2013, 5),
-    title: "對排球的付出",
-    description: "全國排球聯賽負責人之一，第一，二屆菁英盃排球賽務總負責人"
+    title: "CGM裁判講習",
+    description: "預計在未推廣許多大大小小的比賽，因此需要更的裁判加入讓賽事順利進行，當年也舉辦了全國排球聯賽(200多人) & 第一,二屆菁英盃排球賽。"
   },
   {
     from: new Date(2014, 7),
-    title: "帶隊出國遠征",
-    description: "韓國排球大賽第三名"
+    title: "推廣排球",
+    description: "推動許多大大小的排球交流賽，"
   },
   {
     from: new Date(2012, 7),
     title: "研究所時期",
     description: "作了多鐵材料"
-  },
-
-  {
-    from: new Date(2016, 6),
-    title: "Name",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius earum architecto dolor, vitae magnam voluptate accusantium assumenda numquam error mollitia, officia facere consequuntur reprehenderit cum voluptates, ea tempore beatae unde."
   }
+
   // {
   //   from: new Date(2013, 1),
   //   title: "Name",
