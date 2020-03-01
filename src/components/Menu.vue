@@ -1,7 +1,7 @@
 <template>
   <div class="menu">
-    <b-navbar toggleable="lg" type="dark" variant="info">
-      <b-navbar-brand to="/">HOME</b-navbar-brand>
+    <b-navbar toggleable="lg" type="dark">
+      <b-navbar-brand style="color:black" to="/">HOME</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -16,10 +16,13 @@
   </div>
 </template>
 <style lang="scss" scope>
-// .menu {
-//   position: sticky;
-//   position: -webkit-sticky;
-// }
+.menu {
+  // height: 50px;
+}
+.navbar.navbar-dark.navbar-expand-lg {
+  border-bottom: 1px solid black;
+  height: 40px;
+}
 /*a {
   display: inline-block;
   font-size: 16px;
@@ -41,7 +44,7 @@ a:hover {
 .navbar-dark {
   .navbar-nav {
     .nav-link {
-      color: white;
+      color: blue;
     }
   }
 }
