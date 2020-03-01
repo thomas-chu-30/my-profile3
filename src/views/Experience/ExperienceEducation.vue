@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div>
+    <div class="mile-stone">
       <Timeline
         id="time-line"
         class="time-line"
@@ -12,7 +12,7 @@
       />
     </div>
     <transition name="fade">
-      <component style="position: fixed" :is="Event"></component>
+      <component class="des" :is="Event"></component>
     </transition>
     <!-- <div class="des">
       <img v-for="(img,idx) in imgs" :key="idx" width="100%" :src="imgs[idx]" />
@@ -23,6 +23,9 @@
 <script>
 import EventOne from "@/views/Experience/EduComps/EventOne.vue";
 import EventTwo from "@/views/Experience/EduComps/EventTwo.vue";
+import EventThree from "@/views/Experience/EduComps/EventThree.vue";
+import EventFour from "@/views/Experience/EduComps/EventFour.vue";
+import EventFive from "@/views/Experience/EduComps/EventFive.vue";
 import Timeline from "timeline-vuejs";
 import { timeList } from "@/assets/DataSource/EducationEx.js";
 export default {
@@ -30,7 +33,10 @@ export default {
   components: {
     Timeline,
     EventOne,
-    EventTwo
+    EventTwo,
+    EventThree,
+    EventFour,
+    EventFive
   },
   data() {
     return {
@@ -59,13 +65,24 @@ export default {
         document.body.scrollTop +
           ((document.documentElement && document.documentElement.scrollTop) ||
             0);
-      const timelineoffset = document.getElementById("time-line").offsetTop;
-      console.log(top);
-      console.log(timelineoffset);
-      if (top < 134) {
+      // const timelineoffset = document.getElementById("time-line").offsetTop;
+      //螢幕的高度px
+      const bodyHeight = document.body.clientHeight;
+      console.log(bodyHeight);
+      // console.log(top);
+      // console.log(timelineoffset);
+      const p1 = (bodyHeight - 950) / 5;
+      console.log(p1);
+      if (top < p1) {
         this.Event = "EventOne";
-      } else if (top > 134) {
+      } else if (top < p1 * 2) {
         this.Event = "EventTwo";
+      } else if (top < p1 * 3) {
+        this.Event = "EventThree";
+      } else if (top < p1 * 4) {
+        this.Event = "EventFour";
+      } else if (top < p1 * 5) {
+        this.Event = "EventFive";
       }
     }
   }
@@ -85,10 +102,17 @@ export default {
   padding: 0px 30px;
   // align-items: center;
   // justify-content: center;
-  .time-line {
+  .mile-stone {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 40vw;
+    // background-color: red;
+    .time-line {
+      padding-bottom: 50vh;
+    }
   }
   .des {
-    position: sticky;
+    position: fixed;
     left: 45vw;
     // transition: 2s;
     // display: flex;
@@ -96,7 +120,7 @@ export default {
     border: 1px solid #cccccc;
     border-radius: 5px;
     width: 50vw;
-    // height: 60vh;
+    height: 70vh;
     img {
       // width: 100%;
       // position: relative;
