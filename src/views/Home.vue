@@ -11,10 +11,8 @@
     <div class="box four">four</div>
     <div class="box five">five</div>
 
-    <div class="facebook">
-      <!-- <img :src="imgs[0]" /> -->
-    </div>
-    <div class="github"></div>
+    <img class="facebook" :src="imgs[0]" />
+    <img class="github" :src="imgs[1]" />
   </div>
 </template>
 
@@ -22,7 +20,7 @@
 export default {
   data() {
     return {
-      // imgs: [require("@/assets/images/Experience/Edu/1.jpg")]
+      imgs: [require("@/assets/images/Home/facebook.png"), require("@/assets/images/Home/github.png")]
     };
   }
 };
@@ -42,7 +40,8 @@ $menu_height: 40px;
     position: absolute;
     right: 10px;
     top: calc(100vh - 80px);
-    border: 1px solid;
+    // border: 1px solid;
+    // color: blue;
     height: 30px;
     width: 30px;
   }
@@ -50,7 +49,7 @@ $menu_height: 40px;
     position: absolute;
     right: 50px;
     top: calc(100vh - 80px);
-    border: 1px solid;
+    // border: 1px solid;
     height: 30px;
     width: 30px;
   }
