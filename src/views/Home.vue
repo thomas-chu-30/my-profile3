@@ -5,14 +5,26 @@
       <b-carousel-slide caption="Second Slide" img-src="https://picsum.photos/1024/480/?image=12"></b-carousel-slide>
       <b-carousel-slide caption="Third Slide" img-src="https://picsum.photos/1024/480/?image=22"></b-carousel-slide>
     </b-carousel>-->
-    <div class="box one"><img width="100%" :src="imgs[2]" alt="" /></div>
-    <div class="box two"><img width="100%" :src="imgs[3]" alt="" /></div>
-    <div class="box three"><img width="100%" :src="imgs[4]" alt="" /></div>
-    <div class="box four"><img width="100%" :src="imgs[5]" alt="" /></div>
-    <div class="box five"><img width="100%" :src="imgs[6]" alt="" /></div>
+    <div class="box one">
+      <img width="100%" :src="imgs[2]" alt />
+    </div>
+    <div class="box two">
+      <img width="100%" :src="imgs[3]" alt />
+    </div>
+    <div class="box three">
+      <img width="100%" :src="imgs[4]" alt />
+    </div>
+    <div class="box four">
+      <img width="100%" :src="imgs[5]" alt />
+    </div>
+    <div class="box five">
+      <img width="100%" :src="imgs[6]" alt />
+    </div>
 
     <div class="full">
-      <div class="title"><h1>coding & excise & music is my life</h1></div>
+      <div class="title">
+        <h1>Coding, sports, music is all about my life</h1>
+      </div>
     </div>
     <img class="facebook" :src="imgs[0]" />
     <img class="github" :src="imgs[1]" />
