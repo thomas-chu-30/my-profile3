@@ -47,7 +47,7 @@ $menu_height: 40px;
 
 .content {
   position: relative;
-  height: calc(100vh - $menu_height);
+  height: calc(100vh - 40px);
   width: 100vw;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
